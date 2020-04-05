@@ -26,4 +26,4 @@ functions:
     memorySize: 1024
     timeout: 720
     events:
-      - schedule: cron(43 9 * * ? *)
+      - schedule: cron(43 0 ? * MON-FRI *)
