@@ -12,19 +12,19 @@ custom:
 # Add the serverless-webpack plugin
 plugins:
   - serverless-webpack
+  - serverless-layers
 
 provider:
   name: aws
   runtime: nodejs12.x
-  apiGateway:
-    minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+  region: ap-northeast-1
 
 functions:
-  hello:
-    handler: handler.hello
+  koton:
+    handler: handler.koton
+    memorySize: 1024
+    timeout: 720
     events:
-      - http:
-          method: get
-          path: hello
+      - schedule: cron(43 * * * ? *)
