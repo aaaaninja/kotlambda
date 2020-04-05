@@ -17,6 +17,19 @@ export const koton: ScheduledHandler = async (event, _context) => {
   await page.type('#password', process.env.KOT_PASSWORD)
   await page.click('.btn-control-message')
 
+  const wait_time_list =
+    [ 1000 * 60 // 1 min
+    , 1000 * 120
+    , 1000 * 180
+    , 1000 * 240
+    , 1000 * 300
+    , 1000 * 360
+    , 1000 * 420 // 7 min
+    ]
+  const wait_time = wait_time_list[Math.floor(Math.random() * wait_time_list.length)] // randomに取り出す
+  console.log(wait_time)
+  await page.waitFor(wait_time)
+
   await browser.close()
   const ret = {
     statusCode: 200,
