@@ -11,7 +11,11 @@ export const koton: ScheduledHandler = async (event, _context) => {
   })
 
   const page = await browser.newPage()
-  await page.goto('https://s3.kingtime.jp/independent/recorder/personal/')
+  await page.goto('https://s3.kingtime.jp/independent/recorder/personal/', { waitUntil: "networkidle2" })
+  await page.waitFor(5000)
+  await page.type('#id', process.env.KOT_ID)
+  await page.type('#password', process.env.KOT_PASSWORD)
+  await page.click('.btn-control-message')
 
   await browser.close()
   const ret = {
