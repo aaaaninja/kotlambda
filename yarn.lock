@@ -889,7 +889,7 @@ bl@^4.0.1:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-bluebird@^3.4.1, bluebird@^3.5.3, bluebird@^3.5.4, bluebird@^3.5.5, bluebird@^3.7.2:
+bluebird@^3.4.1, bluebird@^3.4.7, bluebird@^3.5.3, bluebird@^3.5.4, bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -5154,6 +5154,13 @@ serverless-layers@^2.1.2:
     glob "^7.1.6"
     mkdirp "^0.5.1"
     slugify "^1.4.0"
+
+serverless-prune-plugin@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/serverless-prune-plugin/-/serverless-prune-plugin-1.4.2.tgz#785ae3f90fe2f505078c5d1663a2724bd2b64833"
+  integrity sha512-GHyvmKjWDPLts2jIFujiT5cxuNp1tD9HxC3WQCxeZWP0yqb7O3zJYJcEP/wWpH87QfUZGbirzrzOQbzunDN77w==
+  dependencies:
+    bluebird "^3.4.7"
 
 serverless-webpack@^5.2.0:
   version "5.3.1"
