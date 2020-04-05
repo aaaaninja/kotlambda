@@ -29,6 +29,8 @@ export const koton: ScheduledHandler = async (event, _context) => {
   const wait_time = wait_time_list[Math.floor(Math.random() * wait_time_list.length)] // randomに取り出す
   console.log(wait_time)
   await page.waitFor(wait_time)
+  await page.click('div.record-btn-inner.record-clock-in')
+  await page.waitFor(10000)
 
   await browser.close()
   const ret = {
