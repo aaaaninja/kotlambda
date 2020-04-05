@@ -13,6 +13,7 @@ export const koton: ScheduledHandler = async (event, _context) => {
   const page = await browser.newPage()
   await page.goto('https://s3.kingtime.jp/independent/recorder/personal/')
 
+  await browser.close()
   const ret = {
     statusCode: 200,
     body: JSON.stringify({
