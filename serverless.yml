@@ -19,6 +19,7 @@ provider:
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
   region: ap-northeast-1
+  logRetentionInDays: 10
 
 functions:
   koton:
