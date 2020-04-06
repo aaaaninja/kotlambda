@@ -38,7 +38,7 @@ export const koton: ScheduledHandler = async (event, _context) => {
   }
 
   const browser = await chromium.puppeteer.launch({
-    args: chromium.args,
+    args: [...chromium.args, '--single-process'],
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath,
     headless: chromium.headless
